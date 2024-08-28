@@ -1,0 +1,284 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('images/petit_prince_2.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.title {
+    position: absolute;
+    top: 10px;
+    left: 480px;
+    font-family: 'Pacifico', cursive;
+    font-size: 28px; /* Adjust the font size */
+    color: #FFD700;; /* Customize the text color */
+    text-align: center;
+}
+
+.star {
+    position: absolute;
+    top: 50%;  /* Start at the middle of the page vertically */
+    left: -10%; /* Start slightly off-screen to the left */
+    width: 50px;
+    height: 50px;
+    background-color: yellow;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    animation: shootingStarBow 5s ease-in-out infinite; /* Infinite loop */
+}
+
+
+.reel-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    background-color: #FFD700;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-shadow: 0 0 5px #FF4500;
+    transition: background-color 0.3s ease;
+}
+
+.reel-button:hover {
+    background-color: #FF8C00;
+}
+
+.picture-reel {
+    z-index: 10;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.picture-reel img {
+    z-index: 10;
+    position: relative;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes shootingStarBow {
+    0% {
+        transform: translate(0, 0) rotate(0deg); /* Start at the left, middle of the screen */
+        opacity: 1; /* Fully visible */
+    }
+    50% {
+        transform: translate(50vw, -30vh) rotate(45deg); /* Move upwards and to the right, reaching the top of the bow */
+        opacity: 1; /* Fully visible */
+    }
+    100% {
+        transform: translate(100vw, 0) rotate(90deg); /* Move downwards to the right, reaching the end of the bow */
+        opacity: 0; /* Fade out as it leaves the screen */
+    }
+}
+
+.birthday-message {
+    text-align: right;
+    font-family: 'Pacifico', cursive;
+    font-size: 24px;
+    color: #FFD700;
+    margin-bottom: 20px;
+    text-shadow:
+        0 0 5px #FFD700, 
+        0 0 10px #FFD700,  
+        0 0 20px #FFD700,  
+        0 0 40px #FF8C00,  
+        0 0 80px #FF8C00,  
+        0 0 90px #FF4500,  
+        0 0 100px #FF4500, 
+        0 0 150px #FF4500; 
+
+    animation: neonGlow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes neonGlow {
+    0% {
+        text-shadow:
+            0 0 5px #FFD700,
+            0 0 10px #FFD700,
+            0 0 20px #FFD700,
+            0 0 40px #FF8C00,
+            0 0 80px #FF8C00,
+            0 0 90px #FF4500,
+            0 0 100px #FF4500,
+            0 0 150px #FF4500;
+    }
+    100% {
+        text-shadow:
+            0 0 10px #FFD700,
+            0 0 20px #FFD700,
+            0 0 30px #FFD700,
+            0 0 60px #FF8C00,
+            0 0 100px #FF8C00,
+            0 0 120px #FF4500,
+            0 0 140px #FF4500,
+            0 0 200px #FF4500;
+    }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Position the image container (needed to position the left and right arrows) */
+  .container {
+    position: relative;
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+    align-items: center;
+  }
+  
+  /* Add a pointer when hovering over the thumbnail images */
+  .cursor {
+    cursor: pointer;
+  }
+  
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 20%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: #FFD700;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* Container for image text */
+  .caption-container {
+    height: 50px;
+    text-align: center;
+    background-color:#FFD700;
+    padding: 2px 128px;
+    color: #000000;
+    font-family: 'Pacifico', cursive;
+    font-size: 20px; /* Adjust the font size */
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Six columns side by side */
+  .column {
+    float: left;
+    width: 16.66%;
+  }
+  
+  /* Add a transparency effect for thumnbail images */
+  .demo {
+    opacity: 0.6;
+  }
+  
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }
+
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 25%;
+  }
+
+  .stop-star-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    background-color: #FF6347;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 15;  /* Ensure it's on top of other elements */
+    transition: background-color 0.3s ease;
+}
+
+.stop-star-button:hover {
+    background-color: #FF4500;
+}
+
+.trigger-button {
+    position: absolute;
+    top: 20px;
+    left: 1300px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    font-family: 'Pacifico', cursive;
+    background-color: #FFD700;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 15;
+    transition: background-color 0.3s ease;
+}
+
+.trigger-button:hover {
+    background-color: #45a049;
+}
+
+.hidden {
+    display: none;
+}

@@ -1,0 +1,90 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliza's Birthday</title>
+    <link rel="stylesheet" href="style_alternative.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Memimas:wght@900&display=swap">
+
+</head>
+<body>
+    <button id="loadNewLayoutButton" class="trigger-button">Geh zurück</button>
+
+    <div class="container">
+
+        <!-- Full-width images with number text -->
+        <div class="mySlides">
+        <div class="numbertext">1 / 7</div>
+            <img src="images/pic1.jpeg", class="center">
+        </div>
+    
+        <div class="mySlides">
+        <div class="numbertext">2 / 7</div>
+            <img src="images/pic2.jpeg" class="center">
+        </div>
+    
+        <div class="mySlides">
+        <div class="numbertext">3 / 7</div>
+            <img src="images/pic3.jpeg" class="center">
+        </div>
+    
+        <div class="mySlides">
+        <div class="numbertext">4 / 7</div>
+            <img src="images/pic4.jpeg" class="center">
+        </div>
+    
+        <div class="mySlides">
+        <div class="numbertext">5 / 7</div>
+            <img src="images/pic5.jpeg" class="center">
+        </div>
+    
+        <div class="mySlides">
+        <div class="numbertext">6 / 7</div>
+            <img src="images/pic6.jpeg" class="center">
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">7 / 7</div>
+                <img src="images/pic7.jpeg" class="center">
+            </div>
+    
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    
+        <!-- Image text -->
+        <div class="caption-container">
+        <p id="caption"></p>
+        </div>
+    
+        <!-- Thumbnail images -->
+        <div class="row">
+        <div class="column">
+            <img class="demo cursor" src="images/pic1.jpeg" style="width:40%" onclick="currentSlide(1)" alt="Schön">
+        </div>
+        <div class="column">
+            <img class="demo cursor" src="images/pic2.jpeg" style="width:40%" onclick="currentSlide(2)" alt="Beautiful">
+        </div>
+        <div class="column">
+            <img class="demo cursor" src="images/pic3.jpeg" style="width:40%" onclick="currentSlide(3)" alt="Linda">
+        </div>
+        <div class="column">
+            <img class="demo cursor" src="images/pic4.jpeg" style="width:40%" onclick="currentSlide(4)" alt="Bellissimo">
+        </div>
+        <div class="column">
+            <img class="demo cursor" src="images/pic5.jpeg" style="width:40%" onclick="currentSlide(5)" alt="Jolie">
+        </div>
+        <div class="column">
+            <img class="demo cursor" src="images/pic6.jpeg" style="width:40%" onclick="currentSlide(6)" alt="красивый">
+        </div>
+        <div class="column">
+            <img class="demo cursor" src="images/pic7.jpeg" style="width:40%" onclick="currentSlide(6)" alt="Kaunis">
+        </div>
+        </div>
+    </div>
+    <script src="script_alternative.js"></script>
+    <!-- Add the "Happy Birthday" text at the bottom -->
+</body>
+</html>
